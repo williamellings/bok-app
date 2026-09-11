@@ -52,5 +52,5 @@ Open `http://localhost:4200` in your browser. Make sure the backend is running a
 ## Links
 
 - 🌐 Live demo:
-- 🔧 Backend repo: [(https://github.com/williamellings/bok-api)]
+- 🔧 Backend repo: [bok-api](https://github.com/williamellings/bok-api)
 - 🎨 Frontend repo (this repo)
