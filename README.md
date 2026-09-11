@@ -1,22 +1,22 @@
 # BokApp
 
-En fullstack CRUD-applikation byggd som tekniskt test för en praktikansökan. Applikationen hanterar böcker och personliga citat, med JWT-baserad autentisering och en responsiv Angular-frontend.
+A fullstack CRUD application built as a technical test for an internship application. The app manages books and personal quotes, with JWT-based authentication and a responsive Angular frontend.
 
-## Funktioner
+## Features
 
-- 🔐 Registrering och inloggning med JWT-autentisering
-- 📚 Full CRUD för böcker (skapa, läsa, uppdatera, radera)
-- 💬 "Mina citat" – personliga citat kopplade till inloggad användare
-- 🌗 Dark mode med sparat val i localStorage
-- 📱 Responsiv design med Bootstrap 5 och Font Awesome-ikoner
+- 🔐 Registration and login with JWT authentication
+- 📚 Full CRUD for books (create, read, update, delete)
+- 💬 "My Quotes" – personal quotes linked to the logged-in user
+- 🌗 Dark mode with saved preference in localStorage
+- 📱 Responsive design with Bootstrap 5 and Font Awesome icons
 
 ## Tech stack
 
 **Backend**
 - .NET 9 / ASP.NET Core Web API
 - Entity Framework Core + SQL Server
-- JWT Bearer-autentisering
-- BCrypt för lösenordshashning
+- JWT Bearer authentication
+- BCrypt for password hashing
 - Swagger/OpenAPI
 
 **Frontend**
@@ -25,7 +25,7 @@ En fullstack CRUD-applikation byggd som tekniskt test för en praktikansökan. A
 - Bootstrap 5 + Font Awesome
 - RxJS
 
-## Kom igång lokalt
+## Getting started locally
 
 ### Backend (BokApi)
 
@@ -35,7 +35,7 @@ dotnet ef database update
 dotnet run --launch-profile https
 ```
 
-API:et körs på `https://localhost:7095`, Swagger på `https://localhost:7095/swagger`.
+The API runs on `https://localhost:7095`, Swagger on `https://localhost:7095/swagger`.
 
 ### Frontend (bok-app)
 
@@ -45,6 +45,12 @@ npm install
 ng serve
 ```
 
-Öppna `http://localhost:4200` i webbläsaren. Se till att backend körs samtidigt.
+Open `http://localhost:4200` in your browser. Make sure the backend is running at the same time.
 
-## Projektstruktur
+## Project structure
+
+## Links
+
+- 🌐 Live demo:
+- 🔧 Backend repo: [(https://github.com/williamellings/bok-api)]
+- 🎨 Frontend repo (this repo)
