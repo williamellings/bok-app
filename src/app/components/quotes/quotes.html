@@ -1,0 +1,65 @@
+<div class="container">
+  <h2 class="mb-4"><i class="fa-solid fa-quote-left me-2"></i>Mina citat</h2>
+
+  @if (errorMessage) {
+  <div class="alert alert-danger">{{ errorMessage }}</div>
+  }
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ editingQuoteId ? 'Redigera citat' : 'Lägg till nytt citat' }}
+      </h5>
+
+      <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()" class="row g-3">
+        <div class="col-md-8">
+          <label for="text" class="form-label">Citat</label>
+          <input id="text" type="text" class="form-control" formControlName="text">
+        </div>
+
+        <div class="col-md-4">
+          <label for="author" class="form-label">Författare</label>
+          <input id="author" type="text" class="form-control" formControlName="author">
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" [disabled]="quoteForm.invalid">
+            <i class="fa-solid fa-check me-1"></i>
+            {{ editingQuoteId ? 'Spara ändringar' : 'Lägg till' }}
+          </button>
+
+          @if (editingQuoteId) {
+          <button type="button" class="btn btn-secondary ms-2" (click)="resetForm()">
+            Avbryt
+          </button>
+          }
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title mb-3">Citatlista</h5>
+
+      <ul class="list-group list-group-flush">
+        @for (quote of quotes; track quote.id) {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          <div>
+            <i class="fa-solid fa-quote-left text-muted me-2"></i>
+            {{ quote.text }} <span class="text-muted">— {{ quote.author }}</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-outline-primary me-1" (click)="editQuote(quote)">
+              <i class="fa-solid fa-pen"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteQuote(quote.id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>
