@@ -47,10 +47,8 @@ ng serve
 
 Open `http://localhost:4200` in your browser. Make sure the backend is running at the same time.
 
-## Project structure
-
 ## Links
 
-- 🌐 Live demo:
+- 🌐 Live demo: [bokapi.netlify.app](https://bokapi.netlify.app)
 - 🔧 Backend repo: [bok-api](https://github.com/williamellings/bok-api)
-- 🎨 Frontend repo (this repo)
+- 🎨 Frontend repo: [bok-app](https://github.com/williamellings/bok-app) (this repo)
