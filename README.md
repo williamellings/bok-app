@@ -1,3 +1,5 @@
+- 🌐 Live demo: [bokapi.netlify.app](https://bokapi.netlify.app)
+
 # BokApp
 
 A fullstack CRUD application built as a technical test for an internship application. The app manages books and personal quotes, with JWT-based authentication and a responsive Angular frontend.
