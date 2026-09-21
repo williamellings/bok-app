@@ -1,37 +1,108 @@
-<div class="container" style="max-width: 600px;">
-  <h2 class="mb-4">
-    <i class="fa-solid fa-book me-2"></i>
-    {{ bookId ? 'Redigera bok' : 'Lägg till ny bok' }}
-  </h2>
+<div class="container form-page-container animate-fade-in">
+  <!-- Back Link -->
+  <div class="mb-3">
+    <a routerLink="/books" class="back-link">
+      <i class="fa-solid fa-arrow-left me-1"></i>
+      Tillbaka till boksamling
+    </a>
+  </div>
 
-  @if (errorMessage) {
-  <div class="alert alert-danger">{{ errorMessage }}</div>
-  }
+  <div class="card form-card shadow-lg mx-auto">
+    <!-- Top Gradient Accent -->
+    <div class="card-accent-bar"></div>
 
-  <div class="card shadow-sm">
-    <div class="card-body">
-      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-          <label for="title" class="form-label">Titel</label>
-          <input id="title" type="text" class="form-control" formControlName="title">
+    <div class="card-body p-4 p-md-5">
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div class="form-header-icon">
+          <i class="fa-solid" [ngClass]="bookId ? 'fa-pen-to-square' : 'fa-book-medical'"></i>
+        </div>
+        <div>
+          <h2 class="form-title m-0">
+            {{ bookId ? 'Redigera bok' : 'Lägg till ny bok' }}
+          </h2>
+          <p class="text-muted small m-0">
+            {{ bookId ? 'Uppdatera informationen för denna bok i samlingen' : 'Fyll i informationen nedan för att registrera en ny bok' }}
+          </p>
+        </div>
+      </div>
+
+      @if (errorMessage) {
+      <div class="alert alert-danger mb-4">
+        <i class="fa-solid fa-circle-exclamation fs-5"></i>
+        <div>{{ errorMessage }}</div>
+      </div>
+      }
+
+      <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" novalidate>
+        <!-- Titel -->
+        <div class="mb-4">
+          <label for="title" class="form-label">
+            Boktitel <span class="text-danger">*</span>
+          </label>
+          <div class="input-group modern-input-group">
+            <span class="input-group-text"><i class="fa-solid fa-heading"></i></span>
+            <input
+              id="title"
+              type="text"
+              class="form-control"
+              placeholder="T.ex. Mästaren och Margarita"
+              formControlName="title"
+            >
+          </div>
+          @if (bookForm.get('title')?.touched && bookForm.get('title')?.invalid) {
+          <div class="field-error">Titel är obligatorisk.</div>
+          }
         </div>
 
-        <div class="mb-3">
-          <label for="author" class="form-label">Författare</label>
-          <input id="author" type="text" class="form-control" formControlName="author">
+        <!-- Författare -->
+        <div class="mb-4">
+          <label for="author" class="form-label">
+            Författare <span class="text-danger">*</span>
+          </label>
+          <div class="input-group modern-input-group">
+            <span class="input-group-text"><i class="fa-solid fa-user-pen"></i></span>
+            <input
+              id="author"
+              type="text"
+              class="form-control"
+              placeholder="T.ex. Michail Bulgakov"
+              formControlName="author"
+            >
+          </div>
+          @if (bookForm.get('author')?.touched && bookForm.get('author')?.invalid) {
+          <div class="field-error">Författare är obligatorisk.</div>
+          }
         </div>
 
-        <div class="mb-3">
-          <label for="publishedDate" class="form-label">Publiceringsdatum</label>
-          <input id="publishedDate" type="date" class="form-control" formControlName="publishedDate">
+        <!-- Publiceringsdatum -->
+        <div class="mb-4">
+          <label for="publishedDate" class="form-label">
+            Publiceringsdatum <span class="text-danger">*</span>
+          </label>
+          <div class="input-group modern-input-group">
+            <span class="input-group-text"><i class="fa-regular fa-calendar"></i></span>
+            <input
+              id="publishedDate"
+              type="date"
+              class="form-control"
+              formControlName="publishedDate"
+            >
+          </div>
+          @if (bookForm.get('publishedDate')?.touched && bookForm.get('publishedDate')?.invalid) {
+          <div class="field-error">Publiceringsdatum är obligatoriskt.</div>
+          }
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">
-          <i class="fa-solid fa-check me-1"></i>
-          {{ bookId ? 'Spara ändringar' : 'Lägg till' }}
-        </button>
-
-        <a routerLink="/books" class="btn btn-secondary ms-2">Avbryt</a>
+        <!-- Actions -->
+        <div class="d-flex align-items-center justify-content-end gap-2 pt-3 border-top border-light-subtle">
+          <a routerLink="/books" class="btn btn-outline-secondary">
+            Avbryt
+          </a>
+          <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">
+            <i class="fa-solid fa-check"></i>
+            <span>{{ bookId ? 'Spara ändringar' : 'Lägg till bok' }}</span>
+          </button>
+        </div>
       </form>
     </div>
   </div>

@@ -1,0 +1,129 @@
+/* Books View Styling */
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Search bar styling */
+.search-card {
+  border-radius: 14px;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.search-input {
+  border-radius: 10px;
+  height: 42px;
+}
+
+.btn-clear-search {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.btn-clear-search:hover {
+  color: var(--text-primary);
+}
+
+/* Table card */
+.table-card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.book-row {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.book-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.book-row:hover .book-avatar {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.book-title {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.975rem;
+  margin-bottom: 2px;
+}
+
+.book-author {
+  font-size: 0.85rem;
+}
+
+.date-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--table-hover-bg);
+  padding: 0.35rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+}
+
+.action-btn {
+  font-size: 0.825rem;
+  padding: 0.35rem 0.65rem;
+}
+
+/* Empty State */
+.empty-state {
+  padding: 3.5rem 1.5rem !important;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.25rem;
+}
+
+.max-w-sm {
+  max-width: 420px;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}

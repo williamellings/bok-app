@@ -1,0 +1,123 @@
+/* Quotes View Styling */
+.quote-form-card {
+  position: relative;
+  border-radius: 16px;
+}
+
+.card-accent-bar {
+  height: 4px;
+  background: var(--primary-gradient);
+  width: 100%;
+}
+
+.quote-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--badge-bg);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+}
+
+.modern-input-group .input-group-text {
+  border-right: none;
+  background-color: var(--input-bg);
+  border-color: var(--input-border);
+  color: var(--text-muted);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.modern-input-group .form-control {
+  border-left: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.modern-input-group:focus-within .input-group-text {
+  border-color: var(--primary);
+}
+
+/* Individual Quote Card */
+.quote-card {
+  position: relative;
+  border-radius: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.quote-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.quote-card.editing-active {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.quote-watermark {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  font-size: 4rem;
+  opacity: 0.05;
+  color: var(--primary);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.quote-card:hover .quote-watermark {
+  opacity: 0.1;
+  transform: scale(1.05);
+}
+
+.quote-text {
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.quote-author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.quote-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.empty-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.max-w-sm {
+  max-width: 420px;
+}
